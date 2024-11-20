@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=prueba
+      - POSTGRES_DB=prueba
+
+    ports:
+      - "5440:5432"
+    volumes:
+      - pgprueba:/var/lib/postgresql/data
+volumes:
+  pgprueba:
